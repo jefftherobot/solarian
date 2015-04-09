@@ -1,0 +1,274 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?-hj0ksj');
+	src:url('../fonts/icomoon.eot?#iefix-hj0ksj') format('embedded-opentype'),
+		url('../fonts/icomoon.svg?-hj0ksj#icomoon') format('svg'),
+		url('../fonts/icomoon.woff?-hj0ksj') format('woff'),
+		url('../fonts/icomoon.ttf?-hj0ksj') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pontano Sans';
+  src: url('../fonts/PontanoSans-Regular.eot');
+  src: url('../fonts/PontanoSans-Regular.eot?#iefix') format('embedded-opentype'),
+  		 url('../fonts/PontanoSans-Regular.svg#PontanoSans-Regular') format('svg'),
+       url('../fonts/PontanoSans-Regular.woff') format('woff'),
+       url('../fonts/PontanoSans-Regular.ttf') format('truetype');
+
+}
+
+@font-face {
+  font-family: 'Lato-Light';
+  src: url('../fonts/Lato-Light.eot');
+  src: url('../fonts/Lato-Light.eot?#iefix') format('embedded-opentype'),
+  		 url('../fonts/Lato-Light.svg#Lato-Light') format('svg'),
+       url('../fonts/Lato-Light.woff') format('woff'),
+       url('../fonts/Lato-Light.ttf') format('truetype');
+
+}
+
+@font-face {
+  font-family: 'Dosis-Light';
+  src: url('../fonts/Dosis-Light.eot');
+  src: url('../fonts/Dosis-Light.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Dosis-Light.woff') format('woff'),
+       url('../fonts/Dosis-Light.ttf') format('truetype'),
+       url('../fonts/Dosis-Light.svg#Dosis-Light') format('svg');
+}
+
+@font-face {
+  font-family: 'Oxygen-Light';
+  src: url('../fonts/Oxygen-Light.eot');
+  src: url('../fonts/Oxygen-Light.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Oxygen-Light.woff') format('woff'),
+       url('../fonts/Oxygen-Light.ttf') format('truetype'),
+       url('../fonts/Oxygen-Light.svg#Oxygen-Light') format('svg');
+}
+
+.fontpro,.fontpro-35528 {
+  font-family: 'Oxygen-Light',sans-serif;
+}
+
+
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-movie:before {
+	content: "\e602";
+	padding: 0 10px 0 0;
+}
+.icon-tv:before {
+	content: "\e603";
+	padding: 0 10px 0 0;
+}
+.icon-music:before {
+	content: "\e604";
+	padding: 0 10px 0 0;
+}
+
+
+
+*, *:before, *:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html { height: 100%; }
+body {
+	margin:0;
+	padding:0;
+	height: 100%;
+	color: #6e7374;
+	background: #DFDFDF;
+	font-family: 'Oxygen-Light', sans-serif;
+}
+#container {
+	position: relative;
+	z-index: 2;
+	height: 100%;
+}
+
+
+#fanart {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	opacity: .5;
+	z-index: 1;
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+
+
+#header
+{
+	position: fixed;
+	z-index: 15;
+	width: 100%;
+	font-size: 16px;
+	line-height: 1;
+	font-weight: 400;
+	background: rgba(255,255,255,.75);
+}
+
+#header .spacer{
+	float: left;
+	width: 20px;
+	height: 50px;
+	background: #424242;
+}
+
+.view-title
+{
+	display: inline-block;
+	padding: 16px;
+	background: #fff;
+}
+
+#sidebar
+{
+	display: none;
+	position: fixed;
+	z-index: 10;
+	width: 50px;
+	height: 100%;
+	background: #fff;
+
+}
+
+#sidebar ul {
+	margin: 50px 0 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+#sidebar li {
+	margin: 15px 0;
+	font-size: 24px;
+	text-align: center;
+	/* -webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	transform: rotate(-90deg); */
+
+}
+
+#movies {
+	position: relative;
+	z-index: 1;
+	padding: 60px 20px;
+	width: 100%;
+}
+
+#movies a {
+	display: inline-block;
+	overflow: hidden;
+	margin: 1px;
+	height: auto;
+	width: 150px;
+	height: 223px;
+	vertical-align: top;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border: 3px solid #F0F5F8;
+	cursor: pointer;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,.2);
+
+	-webkit-transition: all 0.2s ease-in-out 0s;
+	   -moz-transition: all 0.2s ease-in-out 0s;
+	        transition: all 0.2s ease-in-out 0s;
+}
+
+#movies a:hover
+{
+	border: 3px solid #36c2fc;
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+	box-shadow: 0px 10px 15px 0px rgba(0,0,0,.3);
+}
+
+#movie-detail
+{
+	position: absolute;
+	bottom: 0;
+	z-index: 20;
+	width: 100%;
+	padding: 0 0 100px;
+	font-weight: 300!important;
+	color: #3B3F40;
+	background: rgba(246,246,246,.85);
+}
+
+
+#movie-detail .movie-info-row
+{
+	margin: 0 auto;
+	padding: 20px;
+	width: 85%;
+}
+
+#movie-detail .movie-info-poster
+{
+	float: left;
+	width: 17%;
+	min-width: 150px;
+	margin:-10% 20px 20px 0;
+}
+
+#movie-detail .movie-info-poster img
+{
+	width: 100%;
+
+	border: 4px solid #F0F5F8;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,.2);
+}
+
+#movie-detail .movie-info-right
+{
+	float: left;
+	width: 75%;
+}
+
+#movie-detail .title
+{
+	margin: 0 0 5px;
+	font-size: 32px;
+	line-height: 1;
+	font-weight: 300;
+}
+
+#movie-detail .title .year
+{
+	margin: 0 0 0 8px;
+	font-size: 20px;
+	color: #818181;
+}
+
+
+#movie-detail .tagline
+{
+	margin: 0;
+	font-size: 18px;
+	line-height: 1;
+	font-style: italic;
+	font-weight: 300;
+}
+
+#movie-detail p
+{
+	font-size: 14px;
+}
+
+

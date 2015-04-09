@@ -1,0 +1,14 @@
+<div id="fanart" style="background-image:url({{movie.art.fanart}})"></div>
+
+<div id="movie-detail">
+	<div class="movie-info-row">
+		<div class="movie-info-poster"><img src="{{movie.art.poster | size:'w300'}}"></div>
+		<div class="movie-info-right">
+			<h1 class="title">{{movie.title}}<span class="year">({{movie.year}})</span></h1>
+			<!-- <h3></h3> -->
+			<h2 class="tagline">{{movie.tagline}}</h2>
+			<p>{{movie.genre}}</p>
+			<p>{{movie.plot}}</p>
+		</div>
+	</div>
+</div>
