@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 		watch: {
-			files: 'src/**/*.js',
+			files: 'src/js/**/*.js',
 			tasks: ['babel']
 		},
 		babel: {
@@ -13,9 +13,9 @@ module.exports = function(grunt) {
 			dist: {
 				files: [{
 					expand: true,
-					cwd: 'src',
+					cwd: 'src/js',
 					src: '**/*.js',
-					dest: 'dist'
+					dest: 'dist/js'
 				}]
 			}
 		},
@@ -23,13 +23,12 @@ module.exports = function(grunt) {
 			dev: {
 				bsFiles: {
 					src : [
-						'dist/**/*.js',
-						'*.html'
+						'dist/**/*'
 					]
 				},
 				options: {
 					watchTask: true,
-					server: './'
+					server: './dist'
 				}
 			}
 		}
