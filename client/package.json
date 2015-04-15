@@ -9,7 +9,10 @@
     "grunt-contrib-watch": "^0.6.1"
   },
   "jspm": {
-    "directories": {},
+    "directories": {
+      "baseURL": "dist/js",
+      "packages": "dist/js/vendor"
+    },
     "dependencies": {
       "jquery": "github:components/jquery@^2.1.3"
     },
