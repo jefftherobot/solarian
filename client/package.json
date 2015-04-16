@@ -6,20 +6,21 @@
     "grunt": "^0.4.5",
     "grunt-babel": "^5.0.0",
     "grunt-browser-sync": "^2.1.1",
+    "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-watch": "^0.6.1"
   },
   "jspm": {
-    "directories": {
-      "baseURL": "dist/js",
-      "packages": "dist/js/vendor"
-    },
     "dependencies": {
+      "aurelia-bootstrapper": "github:aurelia/bootstrapper@^0.11.0",
+      "aurelia-framework": "github:aurelia/framework@^0.10.0",
       "jquery": "github:components/jquery@^2.1.3"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.0.12",
       "babel-runtime": "npm:babel-runtime@^5.0.12",
-      "core-js": "npm:core-js@^0.8.1"
+      "core-js": "npm:core-js@^0.8.1",
+      "traceur": "github:jmcriffey/bower-traceur@0.0.87",
+      "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.87"
     }
   }
 }

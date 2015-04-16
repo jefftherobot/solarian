@@ -1,3 +1,3 @@
 *.map
 node_modules/
-client/dist/js/vendor/*
+jspm_packages/
