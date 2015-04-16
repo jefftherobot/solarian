@@ -1,9 +1,9 @@
-System.register(['../../services/solarian_service'], function (_export) {
-	var SolarianAPI, _classCallCheck, _createClass, Movie;
+System.register(['aurelia-http-client'], function (_export) {
+	var HttpClient, _classCallCheck, _createClass, SolarianAPI;
 
 	return {
-		setters: [function (_servicesSolarian_service) {
-			SolarianAPI = _servicesSolarian_service.SolarianAPI;
+		setters: [function (_aureliaHttpClient) {
+			HttpClient = _aureliaHttpClient.HttpClient;
 		}],
 		execute: function () {
 			'use strict';
@@ -12,39 +12,36 @@ System.register(['../../services/solarian_service'], function (_export) {
 
 			_createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-			Movie = (function () {
-				function Movie(SolarianAPI) {
-					_classCallCheck(this, Movie);
+			SolarianAPI = (function () {
+				function SolarianAPI(http) {
+					_classCallCheck(this, SolarianAPI);
 
-					this.solarianAPI = SolarianAPI;
-					this.movie = [];
+					this.http = http;
+					this.baseUrl = 'http://jefftherobot.com/medialibrary/api/';
 				}
 
-				_createClass(Movie, [{
-					key: 'activate',
-					value: function activate(params) {
-						var _this = this;
-
-						var id = params.id;
-
-						if (id !== undefined) {
-							this.solarianAPI.getMovie(id).then(function (r) {
-								_this.movie = r.content;
-							});
-						}
+				_createClass(SolarianAPI, [{
+					key: 'getAllMovies',
+					value: function getAllMovies() {
+						return this.http.get(this.baseUrl + 'movies');
+					}
+				}, {
+					key: 'getMovie',
+					value: function getMovie(id) {
+						return this.http.get(this.baseUrl + 'movies/' + id);
 					}
 				}], [{
 					key: 'inject',
 					value: function inject() {
-						return [SolarianAPI];
+						return [HttpClient];
 					}
 				}]);
 
-				return Movie;
+				return SolarianAPI;
 			})();
 
-			_export('Movie', Movie);
+			_export('SolarianAPI', SolarianAPI);
 		}
 	};
 });
-//# sourceMappingURL=detail.js.map
+//# sourceMappingURL=solarian_service.js.map

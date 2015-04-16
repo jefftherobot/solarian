@@ -19,7 +19,9 @@ System.register(["aurelia-router"], function (_export) {
 					this.router = router;
 					this.router.configure(function (config) {
 						config.title = "Solarian";
-						config.map([{ route: "movies", moduleId: "./routes/movies/index", nav: true }, { route: "movies/:id/detail", moduleId: "./routes/movies/detail" }, { route: "", redirect: "movies" }]);
+						config.map([{ route: "movies", moduleId: "./routes/movies/index", nav: true },
+						//{ route: 'movies/:id/detail',  moduleId: './routes/movies/detail' },
+						{ route: "", redirect: "movies" }]);
 					});
 				}
 
