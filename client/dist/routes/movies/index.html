@@ -1,10 +1,12 @@
 <template>
-	<router-view></router-view>
+	<require from="../../utility/poster-size"></require>
+
 	<ul class="list-group">
-		<li class="list-group-item" repeat.for="movie of movies">
+		<li class="list-group-item" repeat.for="movie of movies | posterSize:'w185'">
 			<a href="#movies/${movie.id}">
 				${movie.title}
 			</a>
+			${movie.poster}
 		</li>
 	</ul>
 </template>

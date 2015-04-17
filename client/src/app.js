@@ -10,7 +10,7 @@ export class App {
 			config.title = "Solarian";
 			config.map([
 				{ route: 'movies',      moduleId: './routes/movies/index',    nav: true },
-				//{ route: 'movies/:id/detail',  moduleId: './routes/movies/detail' },
+				{ route: 'movies/:id',  moduleId: './routes/movies/detail' },
 				{ route: '',            redirect: 'movies' }
 			]);
 		});

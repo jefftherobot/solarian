@@ -1,19 +1,11 @@
-import {Router} from 'aurelia-router';
 import {SolarianAPI} from '../../services/solarian_service'
 
 export class Movies{
-	static inject() { return [Router, SolarianAPI]; }
+	static inject() { return [SolarianAPI]; }
 
-	constructor(router, SolarianAPI){
+	constructor(SolarianAPI){
 		this.solarianAPI = SolarianAPI;
 		this.movies = [];
-		this.router = router;
-
-		this.router.configure(config => {
-			config.map([
-				{ route: ['',':id'],  moduleId: './detail' }
-			]);
-		});
 	}
 
 	activate(){

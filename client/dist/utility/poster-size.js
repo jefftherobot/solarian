@@ -1,10 +1,8 @@
-System.register(['../../services/solarian_service'], function (_export) {
-	var SolarianAPI, _classCallCheck, _createClass, Movies;
+System.register([], function (_export) {
+	var _classCallCheck, _createClass, PosterSizeValueConverter;
 
 	return {
-		setters: [function (_servicesSolarian_service) {
-			SolarianAPI = _servicesSolarian_service.SolarianAPI;
-		}],
+		setters: [],
 		execute: function () {
 			'use strict';
 
@@ -12,35 +10,27 @@ System.register(['../../services/solarian_service'], function (_export) {
 
 			_createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-			Movies = (function () {
-				function Movies(SolarianAPI) {
-					_classCallCheck(this, Movies);
+			//"w92", "w154", "w185", "w342", "w500", "w780", "original"
 
-					this.solarianAPI = SolarianAPI;
-					this.movies = [];
+			PosterSizeValueConverter = (function () {
+				function PosterSizeValueConverter() {
+					_classCallCheck(this, PosterSizeValueConverter);
 				}
 
-				_createClass(Movies, [{
-					key: 'activate',
-					value: function activate() {
-						var _this = this;
-
-						this.solarianAPI.getAllMovies().then(function (r) {
-							_this.movies = r.content;
+				_createClass(PosterSizeValueConverter, [{
+					key: 'toView',
+					value: function toView(val, size) {
+						return val.filter(function (item) {
+							return item.poster = item.poster.replace(/original/g, size);
 						});
-					}
-				}], [{
-					key: 'inject',
-					value: function inject() {
-						return [SolarianAPI];
 					}
 				}]);
 
-				return Movies;
+				return PosterSizeValueConverter;
 			})();
 
-			_export('Movies', Movies);
+			_export('PosterSizeValueConverter', PosterSizeValueConverter);
 		}
 	};
 });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=poster-size.js.map
