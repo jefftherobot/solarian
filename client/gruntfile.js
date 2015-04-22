@@ -2,8 +2,18 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 		watch: {
-			files: 'src/**/*',
-			tasks: ['sass', 'copy', 'babel']
+			scripts: {
+				files: ['src/**/*.js'],
+				tasks: ['babel']
+			},
+			html: {
+				files: ['src/**/*.html'],
+				tasks: ['copy']
+			},
+			css: {
+				files: ['src/**/*.scss'],
+				tasks: ['sass']
+			}
 		},
 		babel: {
 			options: {
