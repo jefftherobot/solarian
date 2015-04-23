@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 			dist: {
 				options: {
 					style: 'compressed',
-					require: 'sass-globbing'
+					require: ['sass-globbing', 'sass-css-importer']
 				},
 				files: {
 					'dist/app.css': 'src/app.scss'
