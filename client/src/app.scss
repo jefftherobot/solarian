@@ -1,2 +1,22 @@
+@import url("http://fonts.googleapis.com/css?family=Oxygen:400,300,700");
 @import "CSS:../jspm_packages/github/necolas/normalize.css@3.0.3/normalize";
+
+html { height: 100%; }
+body {
+	margin:0;
+	padding:0;
+	height: 100%;
+	color: #6e7374;
+	background: #dfdfdf;
+	font-family: 'Oxygen', sans-serif;
+}
+
+main {
+	position: relative;
+	z-index: 2;
+	margin: 20px;
+	height: 100%;
+}
+
+//modules
 @import "**/*";
