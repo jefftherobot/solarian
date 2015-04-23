@@ -1,6 +1,19 @@
 <template>
-	<section>
-		<h1>${movie.title}</h1>
-		<p>${movie.plot}</p>
+	<require from="../../utility/poster-size"></require>
+
+	<section class="movie-detail">
+		<div class="movie-detail__fanart" style="background-image:url(${movie.art.fanart})"></div>
+
+		<div class="movie-detail__body">
+			<div class="movie-detail__row">
+				<div class="movie-detail__poster"><img src="${movie.art.poster | posterSize:'w300'}"></div>
+				<div class="movie-detail__right">
+					<h1 class="movie-detail__title">${movie.title}<span class="year">(${movie.year})</span></h1>
+					<h2 class="movie-detail__tagline">${movie.tagline}</h2>
+					<p>${movie.genre}</p>
+					<p>${movie.plot}</p>
+				</div>
+			</div>
+		</div>
 	</section>
 </template>

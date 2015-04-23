@@ -2,6 +2,6 @@
 	<require from="../../utility/poster-size"></require>
 
 	<section class="movies">
-		<a repeat.for="movie of movies | posterSize:'w185'" class="movies__item" href="#/movies/${movie.id}" name="${movie.title}" style="background-image:url(${movie.poster});"></a>
+		<a repeat.for="movie of movies" class="movies__item" href="#/movies/${movie.id}" name="${movie.title}" style="background-image:url(${movie.poster | posterSize:'w185'});"></a>
 	</section>
 </template>
