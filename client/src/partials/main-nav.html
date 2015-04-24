@@ -1,0 +1,9 @@
+<template>
+	<nav>
+		<ul class="main-nav">
+			<li repeat.for="row of router.navigation" class="main-nav__item ${row.isActive ? 'active' : ''}">
+				<a href.bind="row.href" class="main-nav__link">${row.title}</a>
+			</li>
+		</ul>
+	</nav>
+</template>
