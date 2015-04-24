@@ -1,7 +1,8 @@
+import {inject} from 'aurelia-framework';
 import {SolarianAPI} from '../../services/solarian_service'
 
+@inject(SolarianAPI)
 export class Movies{
-	static inject() { return [SolarianAPI]; }
 
 	constructor(SolarianAPI){
 		this.solarianAPI = SolarianAPI;

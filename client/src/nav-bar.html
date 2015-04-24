@@ -1,0 +1,15 @@
+<template>
+	<nav>
+
+		<ul class="nav navbar-nav">
+			<li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
+				<a href.bind="row.href">${row.title}</a>
+			</li>
+		</ul>
+
+		<ul class="nav navbar-nav navbar-right">
+			<li class="loader" if.bind="router.isNavigating">
+			</li>
+		</ul>
+	</nav>
+</template>

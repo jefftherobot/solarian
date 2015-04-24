@@ -1,8 +1,10 @@
-System.register(["aurelia-router"], function (_export) {
-	var Router, _classCallCheck, _createClass, App;
+System.register(["aurelia-framework", "aurelia-router"], function (_export) {
+	var inject, Router, _classCallCheck, App;
 
 	return {
-		setters: [function (_aureliaRouter) {
+		setters: [function (_aureliaFramework) {
+			inject = _aureliaFramework.inject;
+		}, function (_aureliaRouter) {
 			Router = _aureliaRouter.Router;
 		}],
 		execute: function () {
@@ -10,26 +12,19 @@ System.register(["aurelia-router"], function (_export) {
 
 			_classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
 
-			_createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
 			App = (function () {
 				function App(router) {
-					_classCallCheck(this, App);
+					_classCallCheck(this, _App);
 
 					this.router = router;
 					this.router.configure(function (config) {
 						config.title = "Solarian";
-						config.map([{ route: "movies", moduleId: "./routes/movies/index", nav: true }, { route: "movies/:id", moduleId: "./routes/movies/detail" }, { route: "", redirect: "movies" }]);
+						config.map([{ route: ["", "movies"], moduleId: "./routes/movies/index", nav: true, title: "Movies" }, { route: "movies/:id", moduleId: "./routes/movies/detail" }, { route: "tvshows", moduleId: "./routes/tvshows/index", nav: true, title: "TV Shows" }, { route: "tvshows/:id", moduleId: "./routes/tvshows/detail" }]);
 					});
 				}
 
-				_createClass(App, null, [{
-					key: "inject",
-					value: function inject() {
-						return [Router];
-					}
-				}]);
-
+				var _App = App;
+				App = inject(Router)(App) || App;
 				return App;
 			})();
 

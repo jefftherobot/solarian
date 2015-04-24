@@ -18,7 +18,12 @@ module.exports = function(grunt) {
 		babel: {
 			options: {
 				sourceMap: true,
-				modules: 'system'
+				modules: 'system',
+				stage:2,
+				optional: [
+					"es7.decorators",
+					"es7.classProperties"
+				]
 			},
 			dist: {
 				files: [{

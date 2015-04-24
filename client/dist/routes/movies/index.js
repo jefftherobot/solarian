@@ -1,8 +1,10 @@
-System.register(['../../services/solarian_service'], function (_export) {
-	var SolarianAPI, _classCallCheck, _createClass, Movies;
+System.register(['aurelia-framework', '../../services/solarian_service'], function (_export) {
+	var inject, SolarianAPI, _classCallCheck, _createClass, Movies;
 
 	return {
-		setters: [function (_servicesSolarian_service) {
+		setters: [function (_aureliaFramework) {
+			inject = _aureliaFramework.inject;
+		}, function (_servicesSolarian_service) {
 			SolarianAPI = _servicesSolarian_service.SolarianAPI;
 		}],
 		execute: function () {
@@ -14,13 +16,15 @@ System.register(['../../services/solarian_service'], function (_export) {
 
 			Movies = (function () {
 				function Movies(SolarianAPI) {
-					_classCallCheck(this, Movies);
+					_classCallCheck(this, _Movies);
 
 					this.solarianAPI = SolarianAPI;
 					this.movies = [];
 				}
 
-				_createClass(Movies, [{
+				var _Movies = Movies;
+
+				_createClass(_Movies, [{
 					key: 'activate',
 					value: function activate() {
 						var _this = this;
@@ -29,13 +33,9 @@ System.register(['../../services/solarian_service'], function (_export) {
 							_this.movies = r.content;
 						});
 					}
-				}], [{
-					key: 'inject',
-					value: function inject() {
-						return [SolarianAPI];
-					}
 				}]);
 
+				Movies = inject(SolarianAPI)(Movies) || Movies;
 				return Movies;
 			})();
 
